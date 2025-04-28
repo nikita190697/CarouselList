@@ -49,9 +49,7 @@ extension CarouselTableViewCell: UICollectionViewDataSource, UICollectionViewDel
         let cell = collectionView.dequeueReusableCell(
             withReuseIdentifier: "CarouselCollectionViewCell",
             for: indexPath) as! CarouselCollectionViewCell
-        
-        
-        let imgStr = carouselItems[indexPath.item].title
+        let imgStr = carouselItems[indexPath.item].image
         cell.imgView.image = UIImage(named: imgStr)
         return cell
     }

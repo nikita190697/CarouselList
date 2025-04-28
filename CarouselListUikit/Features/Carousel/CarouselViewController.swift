@@ -15,6 +15,13 @@ final class CarouselViewController: UIViewController {
     // MARK: - ViewLife Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        setNavigationTitle()
+        setTblView()
+    }
+    private func setNavigationTitle() {
+        self.title = viewModel.currentItem?.title
+    }
+    private func setTblView() {
         tblView.delegate = self
         tblView.dataSource = self
     }
@@ -70,9 +77,7 @@ extension CarouselViewController: UITableViewDataSource, UITableViewDelegate {
     }
     // MARK: - Adjusting Section Header Height
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        if section == 1 {
-            return 56
-        }
+        if section == 1 { return 56 }
         return 0
     }
 }
@@ -81,6 +86,7 @@ extension CarouselViewController: CarouselSelectionDelegate {
     func carouselDidUpdate(_ index: Int) {
         viewModel.selectedIndex = index
         viewModel.currentItem = viewModel.carouselItems[index]
+        setNavigationTitle()
         viewModel.updateFilteredItems()
         let indexSet = IndexSet(integer: 1)
         tblView.reloadSections(indexSet, with: .automatic)

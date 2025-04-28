@@ -22,7 +22,7 @@ final class StatsBottomSheetViewController: UIViewController {
         setData()
     }
     // MARK: - Utility
-    func setData() {
+    private func setData() {
         lblTitle.text = "Stats for \(titleText)"
         lblCount.text = "Items: \(count)"
         let sortedStats = stats.sorted { $0.value > $1.value }

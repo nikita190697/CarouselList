@@ -1,6 +1,7 @@
 [
   {
-    "title": "image1",
+    "title": "Category1",
+    "image": "image1",
     "items": [
       { "title": "Apple", "description": "A sweet red fruit", "imageName": "image1" },
       { "title": "Banana", "description": "A yellow tropical fruit", "imageName": "image2" },
@@ -17,7 +18,8 @@
     ]
   },
   {
-    "title": "image2",
+    "title": "Category2",
+    "image": "image2",
     "items": [
       { "title": "Dog", "description": "A loyal companion", "imageName": "image2" },
       { "title": "Cat", "description": "A curious feline", "imageName": "image1" },
@@ -26,7 +28,8 @@
     ]
   },
   {
-    "title": "image3",
+    "title": "Category3",
+    "image": "image1",
     "items": [
       { "title": "India", "description": "Country in South Asia", "imageName": "image3" },
       { "title": "USA", "description": "United States of America", "imageName": "image1" },
@@ -35,7 +38,8 @@
     ]
   },
   {
-    "title": "image1",
+    "title": "Category4",
+    "image": "image3",
     "items": [
       { "title": "Apple", "description": "A sweet red fruit", "imageName": "image2" },
       { "title": "Banana", "description": "A yellow tropical fruit", "imageName": "image1" },
@@ -44,7 +48,8 @@
     ]
   },
   {
-    "title": "image2",
+    "title": "Category5",
+    "image": "image1",
     "items": [
       { "title": "Dog", "description": "A loyal companion", "imageName": "image1" },
       { "title": "Cat", "description": "A curious feline", "imageName": "image3" },
@@ -53,7 +58,8 @@
     ]
   },
   {
-    "title": "image3",
+    "title": "Category6",
+    "image": "image2",
     "items": [
       { "title": "India", "description": "Country in South Asia", "imageName": "image3" },
       { "title": "USA", "description": "United States of America", "imageName": "image1" },

@@ -9,10 +9,10 @@ import Foundation
 struct CarouselItem: Identifiable, Codable {
     var id = UUID()
     let title: String
+    let image: String
     let items: [ListItem]
-    
     private enum CodingKeys: String, CodingKey {
-        case title, items
+        case title, items, image
     }
 }
 
