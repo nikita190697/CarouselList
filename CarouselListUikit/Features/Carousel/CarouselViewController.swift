@@ -86,6 +86,7 @@ extension CarouselViewController: CarouselSelectionDelegate {
     func carouselDidUpdate(_ index: Int) {
         viewModel.selectedIndex = index
         viewModel.currentItem = viewModel.carouselItems[index]
+        viewModel.searchText = ""
         setNavigationTitle()
         viewModel.updateFilteredItems()
         let indexSet = IndexSet(integer: 1)
