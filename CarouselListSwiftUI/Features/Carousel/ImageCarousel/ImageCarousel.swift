@@ -12,7 +12,7 @@ struct ImageCarousel: View {
         VStack {
             TabView(selection: $selectedImageIndex) {
                 ForEach(0..<viewModel.carouselItems.count, id: \.self) { index in
-                    Image(viewModel.carouselItems[index].title)
+                    Image(viewModel.carouselItems[index].image)
                         .resizable()
                         .scaledToFit()
                         .frame(height: 180)

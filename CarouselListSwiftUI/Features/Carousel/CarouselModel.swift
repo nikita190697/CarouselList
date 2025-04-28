@@ -10,6 +10,7 @@ import Foundation
 
 struct CarouselItem: Codable {
     let title: String
+    let image: String
     let items: [ListItem]
 }
 struct ListItem: Identifiable, Codable {
