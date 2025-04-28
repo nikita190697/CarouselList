@@ -8,14 +8,17 @@
 import SwiftUI
 import Foundation
 
-struct CarouselItem: Identifiable {
-    let id = UUID()
+struct CarouselItem: Codable {
     let title: String
     let items: [ListItem]
 }
-struct ListItem: Identifiable {
-    let id = UUID()
+struct ListItem: Identifiable, Codable {
+    var id: UUID = UUID()
     let title: String?
     let description: String?
     let imageName: String?
+    
+    private enum CodingKeys: String, CodingKey {
+        case title, description, imageName
+    }
 }
