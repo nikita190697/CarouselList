@@ -23,7 +23,7 @@ final class CarouselViewController: UIViewController {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         if let statsVC = storyboard.instantiateViewController(withIdentifier: "StatsBottomSheetViewController") as? StatsBottomSheetViewController {
             statsVC.stats = viewModel.stats
-            statsVC.count = viewModel.currentItem?.items.count ?? 0
+            statsVC.count = viewModel.filteredItems.count 
             statsVC.titleText = viewModel.currentItem?.title ?? ""
             statsVC.modalPresentationStyle = .popover
             self.present(statsVC, animated: true)
