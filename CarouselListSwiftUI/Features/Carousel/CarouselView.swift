@@ -41,7 +41,7 @@ struct CarouselView: View {
                 .sheet(isPresented: $viewModel.showStats) {
                     StatsBottomSheet(
                         stats: viewModel.stats,
-                        count: viewModel.currentItem?.items.count ?? 0,
+                        count: viewModel.filteredItems.count,
                         title: viewModel.currentItem?.title ?? ""
                     )
                     .presentationDetents([.medium])

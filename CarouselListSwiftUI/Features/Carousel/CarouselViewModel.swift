@@ -97,7 +97,7 @@ class CarouselViewModel {
         guard index >= 0 && index < carouselItems.count else { return }
         selectedIndex = index
         currentItem = carouselItems[index]
-        updateFilteredItems()
+        searchText = ""
     }
     
     // MARK: - Update Filtered Items
