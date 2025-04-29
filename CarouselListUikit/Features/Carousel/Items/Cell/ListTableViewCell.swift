@@ -25,13 +25,13 @@ final class ListTableViewCell: UITableViewCell {
     }
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-        
         // Configure the view for the selected state
     }
     // MARK: - Utility
     private func setData() {
         guard let item else { return }
         lblTitle.text = item.title
+        lblTitle.font = UIFont.boldSystemFont(ofSize: 17)
         lblDesc.text = item.description
         if let strImage = item.imageName {
             imgView.image = UIImage(named: strImage)
