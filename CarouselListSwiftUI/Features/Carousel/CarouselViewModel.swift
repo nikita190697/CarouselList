@@ -26,7 +26,7 @@ class CarouselViewModel {
     }
     // MARK: - Setup
     func setup() {
-        carouselItems = loadCarouselItems()
+        carouselItems = loadItems(from: "carouselItems", as: [CarouselItem].self) ?? []
         currentItem = carouselItems.first
         updateFilteredItems()
     }
@@ -62,18 +62,18 @@ class CarouselViewModel {
     }
 }
 extension CarouselViewModel {
-    func loadCarouselItems() -> [CarouselItem] {
-        guard let url = Bundle.main.url(forResource: "carouselItems", withExtension: "json") else {
-            print("Failed to find JSON file.")
-            return []
+    func loadItems<T: Decodable>(from fileName: String, as type: T.Type) -> T? {
+        guard let url = Bundle.main.url(forResource: fileName, withExtension: "json") else {
+            print("Failed to find JSON file: \(fileName).json")
+            return nil
         }
         do {
             let data = try Data(contentsOf: url)
-            let carouselItems = try JSONDecoder().decode([CarouselItem].self, from: data)
-            return carouselItems
+            let decodedItems = try JSONDecoder().decode(T.self, from: data)
+            return decodedItems
         } catch {
-            print("Error loading JSON: \(error)")
-            return []
+            print("Error loading JSON from \(fileName).json: \(error)")
+            return nil
         }
     }
 }
